@@ -7,13 +7,13 @@
 
 export const connectionOptions = {
   hosts: {
-    // curl -s https://$JITSI_MEET_WEB_DOMAIN/index.html | grep config.hosts.domain
+    // curl -s https://$JITSI_MEET_WEB_DOMAIN/index.html | awk '/XMPP domain/{getline; print}'
     domain: 'meet.jit.si',
-    // curl -s https://$JITSI_MEET_WEB_DOMAIN/index.html | grep config.hosts.muc
+    // curl -s https://$JITSI_MEET_WEB_DOMAIN/index.html | awk '/XMPP MUC domain/{getline; print}'
     muc: 'conference.meet.jit.si',
-    // curl -s https://$JITSI_MEET_WEB_DOMAIN/index.html | grep config.hosts.anonymousdomain
+    // curl -s https://$JITSI_MEET_WEB_DOMAIN/index.html | grep 'anonymousdomain:'
     anonymousdomain: 'guest.meet.jit.si',
-    // curl -s https://$JITSI_MEET_WEB_DOMAIN/index.html | grep config.hosts.authdomain
+    // curl -s https://$JITSI_MEET_WEB_DOMAIN/index.html | grep 'authdomain:'
     authdomain: 'meet.jit.si',
     // (optional) specify the focus component to use (part of the XMPP stuff). defaults to the value of hosts.domain if not set.
     focus: 'focus.meet.jit.si',
